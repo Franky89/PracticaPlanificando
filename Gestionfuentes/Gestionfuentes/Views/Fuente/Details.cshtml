@@ -1,0 +1,42 @@
+﻿@model Gestionfuentes.Models.Fuente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Fuente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.temperatura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.temperatura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valoracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valoracion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FuenteID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

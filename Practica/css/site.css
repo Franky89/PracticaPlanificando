@@ -1,0 +1,53 @@
+#datosFuente1 {
+    
+     float:left;
+     margin-left: auto;
+     margin-top: 30px;
+}
+#datosFuente2 {
+    
+     float:left;
+     margin-left: auto;
+     margin-top: 10px;
+}
+
+#datosLogin{
+     float:right;
+     margin-right: auto;
+     margin-top: 30px;
+}
+
+#datos {
+	height: 130px;
+}
+
+#contenedorMapa {
+    width:auto;
+    height: auto;  
+}
+.contenedorMapa {
+   
+    border-radius: 12px;
+    border: solid 1px #EFEFEF;
+    box-shadow: 1px 1px 5px #999;
+}
+
+#mapa {
+
+    height: 320px;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#botCentro {
+    float:right;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+#botLoc {
+    float:left;
+    margin-top: 5px;
+    margin-left: 50px;
+}

@@ -85,7 +85,7 @@
                             <span class='ss-required-asterisk'>*</span>
                         </label>
                         <label class='ss-q-help' for='entry_6'></label>
-                        <input type='text' name='entry.6.single' value='' class='ss-q-short' id='Coordenadas' placeholder='click en el Mapa'
+                        <input type='text' name='entry.6.single' size="40px" value='' class='ss-q-short' id='Coordenadas' placeholder='click en el Mapa'
                         />
                     </div>
                 </div>
@@ -97,9 +97,9 @@
                         <fieldset>
                             <div  id="mapa"></div>
                             <div >
-                                <input type="button" value="localizame" id="botLoc" class="pure-button pure-button-primary" />
+                                <input type="button" value="localizame" id="botLoc" onclick="geoMe()" class="pure-button pure-button-primary" />
                             </div>
-                            <input type="button" value="asignar fuente" id="botCentro" class="pure-button pure-button-primary" />
+                            <input type="button" value="asignar fuente" id="botCentro" onclick="posMe()" class="pure-button pure-button-primary" />
                         </fieldset>
                     </form>
                 

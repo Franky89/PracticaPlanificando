@@ -17,6 +17,7 @@ $(document).ready(function () {
         iconSize: [64, 64],
         iconAnchor: [32, 64],
     });
+	
 
 
    
@@ -32,7 +33,7 @@ $(document).ready(function () {
     $(window).resize();
 
     map.on('click', onMapClick);
-	//map.on('dblclick',posMe);
+	map.on('dblclick',posMe);
    
 });
 function onMapClick(e) {
@@ -43,7 +44,8 @@ function onMapClick(e) {
         .setLatLng(e.latlng)
    
         .setContent("As pinchado en: " + e.latlng.toString())
-        .openOn(map);
+       .openOn(map);
+
       }
 
 
@@ -92,12 +94,17 @@ function geoMe()
 	}
 }
 
-function posMe(){
-	var name = $('#name').Attr('value');
-	newMark = L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
+function posMe(posi){
+	
+	//var cap_nombre=document.getElementById("nombre").innerHTML;
+	//var name = $('#name').Attr('value');
+		
+	/*newMark = L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
 	newMark.bindPopup("¡Fuente en (" + posi.latlng.lat + ", " + posi.latlng.lng + ")!"+"(Nombre :"+name+")");
 	map.setView([posi.latlng.lat, posi.latlng.lng], 16);
-	
-
-	
+	*/
+L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
+			.bindPopup("<b>Fuente </b>"+document.getElementById("textName").value).openPopup();	
 }
+
+

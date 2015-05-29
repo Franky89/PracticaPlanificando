@@ -4,6 +4,8 @@ var popup = L.popup();
 var markerMe = null;
 var newMark = null;
 var posi = null;
+localStorage.contador=1;
+
 
 $(document).ready(function () {
     map = L.map('mapa').setView([40.51298, -3.34954], 10);
@@ -96,24 +98,23 @@ function geoMe()
 
 function posMe(posi){
 	
-	//var cap_nombre=document.getElementById("nombre").innerHTML;
-	//var name = $('#name').Attr('value');
-		
-	/*newMark = L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
-	newMark.bindPopup("¡Fuente en (" + posi.latlng.lat + ", " + posi.latlng.lng + ")!"+"(Nombre :"+name+")");
-	map.setView([posi.latlng.lat, posi.latlng.lng], 16);
-	*/
+
 L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
 			.bindPopup("<b>Fuente </b>"+document.getElementById("textName").value).openPopup();	
 }
 
 function saveOptions()
 {
+    
     if (typeof(Storage) !== "undefined")
     {
     	//Guardamos todos los datos que necesitemos
-        localStorage.setItem('level', $('#level').val());
-        gameOver();
+        var contador =  localStorage.getItem('contador');
+        
+        localStorage.setItem('Fuente'+contador, ''+{"nombre":$('#textName').val(), "lastName":"Doe"});
+       
+        localStorage.contador = Number(localStorage.contador) + 1;
+        
     }
     else
         alert("El navegador no puede trabajar offline.");
@@ -122,9 +123,8 @@ function saveOptions()
 //Funecion a la que llamamos al principio para recuperar los datos guardados
 function init()
 {
-    img = new Image();
-    img.addEventListener('load', onImage, false);
-    
+   
+       
     if (typeof(Storage)!== "undefined" && localStorage.getItem('level') != null)
         _level = localStorage.getItem('level');
     else

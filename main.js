@@ -4,6 +4,7 @@ var popup = L.popup();
 var markerMe = null;
 var newMark = null;
 var posi = null;
+var nam = null;
 
 $(document).ready(function () {
     map = L.map('mapa').setView([40.51298, -3.34954], 10);
@@ -93,9 +94,9 @@ function geoMe()
 }
 
 function posMe(){
-	var name = $('#name').Attr('value');
+	//nam= $('#textName').Attr("value",'erg');
 	newMark = L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
-	newMark.bindPopup("¡Fuente en (" + posi.latlng.lat + ", " + posi.latlng.lng + ")!"+"(Nombre :"+name+")");
+	newMark.bindPopup("¡Fuente en (" + posi.latlng.lat + ", " + posi.latlng.lng + ")!"+"(Nombre :+nam+)");
 	map.setView([posi.latlng.lat, posi.latlng.lng], 16);
 	
 

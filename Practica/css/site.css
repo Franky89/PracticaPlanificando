@@ -49,7 +49,7 @@
 #botLoc {
     float:left;
     margin-top: 5px;
-    margin-left: 50px;
+    margin-left: auto;
 }
 
 .button-success {

@@ -107,4 +107,29 @@ L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
 			.bindPopup("<b>Fuente </b>"+document.getElementById("textName").value).openPopup();	
 }
 
+function saveOptions()
+{
+    if (typeof(Storage) !== "undefined")
+    {
+    	//Guardamos todos los datos que necesitemos
+        localStorage.setItem('level', $('#level').val());
+        gameOver();
+    }
+    else
+        alert("El navegador no puede trabajar offline.");
+}
+
+//Funecion a la que llamamos al principio para recuperar los datos guardados
+function init()
+{
+    img = new Image();
+    img.addEventListener('load', onImage, false);
+    
+    if (typeof(Storage)!== "undefined" && localStorage.getItem('level') != null)
+        _level = localStorage.getItem('level');
+    else
+        _level = 4;
+
+    img.src = "./images/puzzle.jpg";
+}
 

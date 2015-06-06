@@ -26,14 +26,19 @@
 		refrescar(sessionStorage, document.getElementById('almacenamientoSesion'));
 	}
 	
+	//Esta funcion refresca los datos y crea los marcadores en caso de existir valor alamacenados
 	function refrescar(storage, area) {
 		area.innerHTML = '';
 		for (var i=0; i<storage.length; i++) {
 			var clave = storage.key(i);
 			var valor = storage.getItem(clave);
-			//var obj = JSON.parse(valor);
+			obj = JSON.parse(valor);
 			
-			area.innerHTML += (clave + '=' + valor + '\n');
+			area.innerHTML += (" Nombre: " + obj.nombre + "  Latitud: " + obj.latitud + "  Longitud: " + obj.longitud +'\n');
+			
+			L.marker([obj.latitud, obj.longitud]).addTo(map)
+			.bindPopup("<b>" + obj.nombre + "</b>" + "<br><b>Latitud: </b>" + obj.latitud + "<br><b>Longitud: </b>" + obj.longitud ).openPopup() ;	
+			
 		}
 		
 	}

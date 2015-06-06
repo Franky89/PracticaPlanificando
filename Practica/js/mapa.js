@@ -4,7 +4,7 @@ var popup = L.popup();
 var markerMe = null;
 var newMark = null;
 var posi = null;
-localStorage.contador=1;
+
 
 
 $(document).ready(function () {
@@ -98,38 +98,14 @@ function geoMe()
 
 function posMe(posi){
 	
+document.getElementById("Latitud").value = posi.latlng.lat;
+document.getElementById("Longitud").value = posi.latlng.lng;
 
 L.marker([posi.latlng.lat, posi.latlng.lng]).addTo(map)
-			.bindPopup("<b>Fuente </b>"+document.getElementById("textName").value).openPopup();	
+			.bindPopup("<b>" + document.getElementById("textName").value + "</b>" + "<br><b>Latitud: </b>" + posi.latlng.lat + "<br><b>Longitud: </b>" + posi.latlng.lng ).openPopup() ;	
+			
+
 }
 
-function saveOptions()
-{
-    
-    if (typeof(Storage) !== "undefined")
-    {
-    	//Guardamos todos los datos que necesitemos
-        var contador =  localStorage.getItem('contador');
-        
-        localStorage.setItem('Fuente'+contador, ''+{"nombre":$('#textName').val(), "lastName":"Doe"});
-       
-        localStorage.contador = Number(localStorage.contador) + 1;
-        
-    }
-    else
-        alert("El navegador no puede trabajar offline.");
-}
 
-//Funecion a la que llamamos al principio para recuperar los datos guardados
-function init()
-{
-   
-       
-    if (typeof(Storage)!== "undefined" && localStorage.getItem('level') != null)
-        _level = localStorage.getItem('level');
-    else
-        _level = 4;
-
-    img.src = "./images/puzzle.jpg";
-}
 

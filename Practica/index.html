@@ -104,11 +104,11 @@
         						<div class='ss-form-entry'>
         							<label class='ss-q-title' for='entry_6'>Latitud</label>
         							<label class='ss-q-help' for='entry_6'></label>
-        							<input type='text' name='entry.6.single'  value='' class='ss-q-short' id='Latitud' placeholder='click en el Mapa'
+        							<input type='text' name='entry.6.single'  value='' class='ss-q-short' id='Latitud' placeholder='click en el Mapa' readonly="readonly"
         							/>
                                     <label class='ss-q-title' for='entry_6'>Longitud</label>
         							<label class='ss-q-help' for='entry_6'></label>
-        							<input type='text' name='entry.6.single'  value='' class='ss-q-short' id='Longitud' placeholder='click en el Mapa'
+        							<input type='text' name='entry.6.single'  value='' class='ss-q-short' id='Longitud' placeholder='click en el Mapa' readonly="readonly"
         							/>
         						</div>
         					</div>
@@ -137,14 +137,24 @@
                         <fieldset>
                             <div  id="mapa"></div>
                             <div >
-                                <input type="button" value="localizame" id="botLoc" onclick="geoMe()" class="pure-button pure-button-primary" />
+                                <input type="button" value="Localizame" id="botLoc" onclick="geoMe()" class="pure-button pure-button-primary" />
+                                 
                             </div>
-                            <input type="button" value="asignar fuente" id="botCentro" onclick="posMe()" class="pure-button pure-button-primary" />
+                            <input type="button" value="Asignar fuente" id="botCentro" onclick="posMe()" class="pure-button pure-button-primary" />
+                            <input type="button" value="Guardar" id="botCentro" onclick="guardar()" class="pure-button pure-button-primary" />
+                            <input type="button" value="Refrescar" id="botCentro" onclick="refrescaTodo()" class="pure-button pure-button-primary" />
                         </fieldset>
                     </form>
                 
                 </div>
                 
+            </div>
+            <div div id="datosFuente1" class="col-md-4 col-sm-4">
+                <textarea rows="10" cols="155" id="almacenamientoLocal" readonly="readonly">
+
+                </textarea>
+
+
             </div>
         </div>
         <!-- /.row -->
@@ -161,6 +171,7 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.4/leaflet.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/mapa.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/localStorage.js" charset="utf-8"></script>
 
 </body>
 
